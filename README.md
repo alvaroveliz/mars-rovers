@@ -46,7 +46,7 @@ npm i
 After installation just build and execute with node
 
 ```
-npm build
+npm run build
 node build/index.js ./input.txt
 ```
 
