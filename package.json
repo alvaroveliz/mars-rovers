@@ -1,0 +1,19 @@
+{
+  "name": "aveliz-mars-rovers",
+  "version": "1.0.0",
+  "description": "Assessment for Checkr, Inc.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alvaroveliz/mars-rovers.git"
+  },
+  "author": "Álvaro Véliz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alvaroveliz/mars-rovers/issues"
+  },
+  "homepage": "https://github.com/alvaroveliz/mars-rovers#readme"
+}
