@@ -20,9 +20,11 @@
   "homepage": "https://github.com/alvaroveliz/mars-rovers#readme",
   "devDependencies": {
     "@types/chai": "^4.2.22",
+    "@types/chai-as-promised": "^7.1.4",
     "@types/mocha": "^9.0.0",
     "@types/node": "^16.10.3",
     "chai": "^4.3.4",
+    "chai-as-promised": "^7.1.1",
     "mocha": "^9.1.2",
     "nodemon": "^2.0.13",
     "rimraf": "^3.0.2",

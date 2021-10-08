@@ -7,7 +7,11 @@ try {
     if (fs.existsSync(fileName)) {
         console.log(`Reading input file: ${fileName}`);
         const marsRovers = new MarsRovers(fileName);
-        marsRovers.deployRovers();
+        marsRovers.deployRovers().then((data) => {
+            marsRovers.showRoversPath();    
+        });
+    } else {
+        console.log('File not found');
     }
 } catch (err) {
     console.log(err);

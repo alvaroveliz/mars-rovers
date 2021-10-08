@@ -10,7 +10,6 @@ class Rover {
     constructor(posX: number, posY: number, direction: string) {
         this.position = { x: posX, y: posY }
         this.direction = direction;
-        //console.log(`New rover landed at ${this.position.x}, ${this.position.y} - ${this.direction}`);
     }
 
     turnLeft() {
