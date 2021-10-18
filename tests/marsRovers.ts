@@ -1,5 +1,6 @@
 import chai, { expect, use } from 'chai';
 import chaiAsPromised from 'chai-as-promised';
+import { assert } from 'console';
 chai.use(chaiAsPromised);
 
 import MarsRovers from '../src/MarsRovers';
@@ -10,25 +11,46 @@ describe('MarsRover', () => {
   const marsRovers = new MarsRovers(inputFileTest);
 
   it('should validate file format', async () => {
-    await expect(
-      () => marsRovers.deployRovers()
-    ).to.not.throw(new Error('Wrong file format'));
+    try {
+      await marsRovers.deployRovers();
+    } catch (e) {
+      const emsg: string = "" + e;
+      expect(emsg).to.not.eql('Error: Wrong file format');
+    }
   });
 
-  it('should validate plateau configuration', async () => {
-    await expect(
-      () => marsRovers.deployRovers()
-    ).to.not.throw(new Error('Plateau configuration should be "number number"'));
+  it('should validate plateu configuration', async () => {
+    try {
+      await marsRovers.deployRovers();
+    } catch (e) {
+      const emsg: string = "" + e;
+      expect(emsg).to.not.eql('Error: Plateau configuration should be "number number"');
+    }
   });
 
   it('should validate rover configuration', async () => {
-    await expect(
-      () => marsRovers.deployRovers()
-    ).to.not.throw(new Error('Rover configuration should be "x y direction"'));
+    try {
+      await marsRovers.deployRovers();
+    } catch (e) {
+      const emsg: string = "" + e;
+      expect(emsg).to.not.eql('Error: Rover configuration should be "x y direction"');
+    }
   });
 });
 
 describe('Rover', () => {
+  it('should correctly validate the commands', () => {
+    const plateau = new Plateau(5, 5);
+
+    plateau.addRover(1,2,'N');
+    try {
+      plateau.activeRover.move('LMLMLMLMM');
+    } catch (e) {
+      const emsg: string = "" + e;
+      expect(emsg).to.not.have.string('is not a command');
+    }
+  });
+
   it('should correctly follow the given commands', () => {
     const plateau = new Plateau(5, 5);
 

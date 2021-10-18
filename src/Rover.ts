@@ -80,16 +80,16 @@ class Rover {
         for (let i = 0; i < commands.length; i++) {
             let command = commands.charAt(i);
             if(command === 'M') {
-              this.moveForward();
+                this.moveForward();
             }
             else if(command === 'L') {
-              this.turnLeft();
+                this.turnLeft();
             }
             else if(command === 'R') {
-              this.turnRight();
+                this.turnRight();
             }
             else {
-              console.log(`${command} is not a command, please enter M, R, or F.`);
+                throw new Error(`${command} is not a command, please enter L, R or M.`);
             }
         }
     }
